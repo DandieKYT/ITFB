@@ -6,12 +6,14 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.BasePage;
+import pages.EasyDocPage;
 import pages.ProjectPage;
 
 import java.util.Map;
 
 
 public class TestBase extends Attachment {
+    EasyDocPage easyDocPage = new EasyDocPage();
     ProjectPage projectPage = new ProjectPage();
     BasePage basePage = new BasePage();
     Attachment attachment = new Attachment();
