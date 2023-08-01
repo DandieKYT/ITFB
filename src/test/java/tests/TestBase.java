@@ -5,14 +5,15 @@ import help.Attachment;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import pages.BasePage;
-import pages.EasyDocPage;
-import pages.ProjectPage;
+import pages.*;
 
 import java.util.Map;
 
 
 public class TestBase extends Attachment {
+    VkHhPage vkHhPage = new VkHhPage();
+    VacationPage vacationPage = new VacationPage();
+    SymphonyPage symphonyPage = new SymphonyPage();
     EasyDocPage easyDocPage = new EasyDocPage();
     ProjectPage projectPage = new ProjectPage();
     BasePage basePage = new BasePage();
@@ -23,9 +24,9 @@ public class TestBase extends Attachment {
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://itfbgroup.ru";
-        Configuration.browser = "chrome";
-        Configuration.browserVersion = "100.0";
-        Configuration.remote = "https://user1:1234@" + System.getProperty("selenoid_url", "selenoid.autotests.cloud/wd/hub");
+//        Configuration.browser = "chrome";
+//        Configuration.browserVersion = "100.0";
+//        Configuration.remote = "https://user1:1234@" + System.getProperty("selenoid_url", "selenoid.autotests.cloud/wd/hub");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(

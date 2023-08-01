@@ -1,7 +1,6 @@
 package pages;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$x;
@@ -19,6 +18,7 @@ public class EasyDocPage {
         });
         return this;
     }
+
     public EasyDocPage checkoutLogoEasyDoc() {
         step("Проверка видимости лого EasyDoc", () -> {
             checkoutLogoEasyDoc.shouldBe(Condition.visible);
