@@ -11,7 +11,7 @@ import java.util.Map;
 
 
 public class TestBase extends Attachment {
-    VkHhPage vkHhPage = new VkHhPage();
+    VkTelegramPage vkTelegramPage = new VkTelegramPage();
     VacationPage vacationPage = new VacationPage();
     SymphonyPage symphonyPage = new SymphonyPage();
     EasyDocPage easyDocPage = new EasyDocPage();
