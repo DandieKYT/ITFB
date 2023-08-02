@@ -15,7 +15,6 @@ public class SymphonyPage {
             scroolToElement = $x("//*[contains(@class, 't142A__wraptwo')]/a");
 
 
-
     public SymphonyPage openIstructions() {
         step("Прокрутка старницы до необходимых разделов", () -> {
             scroolToElement.scrollIntoView(true);
@@ -29,6 +28,7 @@ public class SymphonyPage {
         });
         return this;
     }
+
     CareerAndCompanyLocators locators = new CareerAndCompanyLocators();
 
     public SymphonyPage openTitle(String param) {
@@ -44,6 +44,7 @@ public class SymphonyPage {
         });
         return null;
     }
+
     public class CareerAndCompanyLocators {
         public SelenideElement openTitlePDF(String param) {
             return $(byTagAndText("span", (param)));

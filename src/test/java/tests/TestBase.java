@@ -24,9 +24,9 @@ public class TestBase extends Attachment {
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://itfbgroup.ru";
-//        Configuration.browser = "chrome";
-//        Configuration.browserVersion = "100.0";
-//        Configuration.remote = "https://user1:1234@" + System.getProperty("selenoid_url", "selenoid.autotests.cloud/wd/hub");
+        Configuration.browser = "chrome";
+        Configuration.browserVersion = "100.0";
+        Configuration.remote = "https://user1:1234@" + System.getProperty("selenoid_url", "selenoid.autotests.cloud/wd/hub");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(

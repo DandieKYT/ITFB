@@ -21,6 +21,7 @@ public class VkTelegramPage {
         });
         return this;
     }
+
     public VkTelegramPage telegramOpen() {
         step("Открытие вкладки карьера", () -> {
             telegramOpen.scrollIntoView(true).click();
@@ -28,9 +29,10 @@ public class VkTelegramPage {
         });
         return this;
     }
+
     public VkTelegramPage checkOutResult() {
         step("Проверка содержимого страницы", () -> {
-            $(byTagAndText( "h1","ITFB"));
+            $(byTagAndText("h1", "ITFB"));
             Selenide.closeWindow();
             Selenide.switchTo().window(0);
         });
