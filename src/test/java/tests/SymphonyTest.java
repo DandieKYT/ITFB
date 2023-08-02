@@ -7,24 +7,22 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import java.io.IOException;
-
 public class SymphonyTest extends TestBase {
-    @Tag("controlProgramAndAgroindustry")
+    @Tag("productsAndCompany")
     @CsvSource(value = {
-            "Инструкция по эксплуатации ПО  ,      ИНСТРУКЦИЯ ПО ЭКСПЛУАТАЦИИ",
-            "Отраслевые решения,   Агропромышленность",
-
+            "Инструкция по эксплуатации ПО ,     Инструкция по эксплуатации ПО Симфония.pdf",
+            "Описание ПО,            Описание программного обеспечения Симфония.pdf",
+            "Описание процессов ПО,    Описание процессов поддержки жизненного цикла ПО Cимфония.pdf"
     })
-    @Owner("Кудрявцев")
-    @Feature("Управление программами и Агропромышленность")
-    @Story("Открытие страниц Управление программами, Агропромышленность и проверка их содержимого")
+    @Owner("Kudryavtsev")
+    @Feature("Продукты и Компания")
+    @Story("Открытие страниц Продукты и Компания и проверка их содержимого")
     @ParameterizedTest
-    public void controlProgramAndAgroindustry(String param, String expectedText) throws IOException {
+    public void pdfTest(String param, String expectedText)  {
         basePage.openPage();
         symphonyPage.openSymphony();
+        symphonyPage.openIstructions();
         symphonyPage.openTitle(param);
-        symphonyPage.pdfFileInstrictions(expectedText);
-
+        symphonyPage.checkTitle(expectedText);
     }
 }

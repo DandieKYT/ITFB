@@ -1,41 +1,56 @@
 package pages;
 
-import com.codeborne.pdftest.PDF;
 import com.codeborne.selenide.SelenideElement;
 
-import java.io.File;
-import java.io.IOException;
-
-import static com.codeborne.pdftest.PDF.containsText;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byTagAndText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 import static io.qameta.allure.Allure.step;
-import static org.hamcrest.MatcherAssert.assertThat;
 
 
 public class SymphonyPage {
-    private SelenideElement openSymphony = $x("//a[text()='Symphony']"),
-            pdfFileInstrictions = $x("//*[contains(@class, 't142A__wraptwo')]/a");
-
-    public SelenideElement openTitle(String param) {
-        return $(byTagAndText("span", (param)));
-    }
-
-    public SymphonyPage pdfFileInstrictions(String expectedText) throws IOException {
-        File download = pdfFileInstrictions.download();
-        PDF pdf = new PDF(download);
-        assertThat(pdf, containsText(expectedText));
-        return this;
-    }
+    private SelenideElement
+            openSymphony = $x("//a[text()='Symphony']"),
+            scroolToElement = $x("//*[contains(@class, 't142A__wraptwo')]/a");
 
 
-    public SymphonyPage openSymphony() {
-        step("Открытие страницы симфонии", () -> {
-            openSymphony.scrollIntoView(true);
-            openSymphony.click();
+
+    public SymphonyPage openIstructions() {
+        step("Прокрутка старницы до необходимых разделов", () -> {
+            scroolToElement.scrollIntoView(true);
         });
         return this;
     }
 
+    public SymphonyPage openSymphony() {
+        step("Открытие страницы симфонии", () -> {
+            openSymphony.scrollIntoView(true).click();
+        });
+        return this;
+    }
+    CareerAndCompanyLocators locators = new CareerAndCompanyLocators();
+
+    public SymphonyPage openTitle(String param) {
+        step("Открытие вкладки с документом", () -> {
+            locators.openTitle(param).click();
+        });
+        return null;
+    }
+
+    public SymphonyPage checkTitle(String expectedText) {
+        step("Проверка содержимого вкладки", () -> {
+            locators.checkTitle(expectedText).shouldBe(text(expectedText));
+        });
+        return null;
+    }
+    public class CareerAndCompanyLocators {
+        public SelenideElement openTitle(String param) {
+            return $(byTagAndText("span", (param)));
+        }
+
+        public SelenideElement checkTitle(String expectedText) {
+            return $((byTagAndText("h1", (expectedText))));
+        }
+    }
 }
