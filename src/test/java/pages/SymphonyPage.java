@@ -33,23 +33,23 @@ public class SymphonyPage {
 
     public SymphonyPage openTitle(String param) {
         step("Открытие вкладки с документом", () -> {
-            locators.openTitle(param).click();
+            locators.openTitlePDF(param).click();
         });
         return null;
     }
 
     public SymphonyPage checkTitle(String expectedText) {
         step("Проверка содержимого вкладки", () -> {
-            locators.checkTitle(expectedText).shouldBe(text(expectedText));
+            locators.checkTittlePDF(expectedText).shouldBe(text(expectedText));
         });
         return null;
     }
     public class CareerAndCompanyLocators {
-        public SelenideElement openTitle(String param) {
+        public SelenideElement openTitlePDF(String param) {
             return $(byTagAndText("span", (param)));
         }
 
-        public SelenideElement checkTitle(String expectedText) {
+        public SelenideElement checkTittlePDF(String expectedText) {
             return $((byTagAndText("h1", (expectedText))));
         }
     }
