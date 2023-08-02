@@ -49,7 +49,7 @@
 
 :clipboard: Наличие вакансии тестировщика на <a href = "https://itfbgroup.ru/career#actual">сайте компании </br>
 
-:speech_balloon: Переход на официальную страницу компании в <a href = "https://vk.com/itfb_group">ВК</a><a href = "https://t.me/itfbgroup">Telegram</a>
+:speech_balloon: Переход на официальную страницу компании в <a href = "https://vk.com/itfb_group">ВК/</a><a href = "https://t.me/itfbgroup">Telegram</a>
 </br>
 
 :clipboard: Открытие страниц с PDF фвйлом <a href = "https://nextcloud.itfbgroup.ru/s/aqZtTNNcc8yKP6b">Инструкция по эксплуатация ПО</a>/<a href = "https://nextcloud.itfbgroup.ru/s/qJ8cxmPz6ita5iL">Описание ПО</a>
