@@ -93,6 +93,7 @@ clean test
 
 <a name="Integration_Allure_TestOps"><h2>:bar_chart: Интеграция с Allure TestOps</h2></a>
 
+![image](https://github.com/DandieKYT/ITFB/assets/75677738/4f8c459d-d63c-44db-ab79-8c09c78974df)
 
 
 
